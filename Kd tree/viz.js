@@ -299,12 +299,7 @@ http://www.zlib.net/zlib_license.html
           var scale = options.scale,
               mimeType = options.mimeType,
               quality = options.quality;
-            scale = options.scale;
-            if (quality== 'undefined' : scale: scale)
-                else 
-                    options
-  
-  
+              
           return this.renderString(src, _extends({}, options, { format: 'svg' })).then(function (str) {
             if ((typeof fabric === 'undefined' ? 'undefined' : _typeof(fabric)) === "object" && fabric.loadSVGFromString) {
               return svgXmlToImageElementFabric(str, { scale: scale, mimeType: mimeType, quality: quality });
