@@ -9,37 +9,6 @@ class Node{
     }
 }
 
-// // class N_Point {
-// //     constructor(points) {
-// //         this.vectorialSpace = points;
-// //     }
-// // }
-
-// function getHeight(node) {
-//     if (node === null){
-//         return 0;
-//     }
-//     // find the height of each subtree
-//     var lh = getHeight(node.left);
-//     var rh = getHeight(node.right);
-//     return 1 + max(lh,rh);
-// }
-// function generate_dot(node){
-//     if (node === null){
-//         return "";
-//     }
-//     var tmp = '';
-//     if (node.left != null){
-//         tmp += '"' + node.point.toString() + '"' + ' -> ' + '"' + node.left.point.toString() + '"' + ';\n';
-//         tmp += generate_dot(node.left);
-//     }
-//     if (node.right != null){
-//         tmp += '"' + node.point.toString() + '"' + ' -> ' + '"' + node.right.point.toString() + '"' + ';\n';
-//         tmp += generate_dot(node.right);
-//     }
-//     //console.log(tmp);
-//     return tmp;
-// }
 
 function build_kdtree(points, depth = 0){
     var n = points.length;
