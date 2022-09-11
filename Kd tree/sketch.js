@@ -19,7 +19,7 @@
 //         var y = Math.floor ( Math.random () * height );
 //         data.push ([x, y]) ;
 
-//         fill (255 , 255 , 255) ;
+//         fill (255 , 255 , 255) ;//color de llenado
 //         circle (x, height - y, 7) ; // 200 -y para q se dibuje apropiadamente
 //         textSize(8);
 //         text (x + ',' + y, x + 5, height - y);// 200 -y para q se dibuje apropiadamente
@@ -119,7 +119,7 @@ function datos_Prueba(datas){
     //     [175 , 100] ,
     //     [150 , 30]
     // ];
-    for(let i = 0; i < datas.length; ++i) {
+    for(let i = 0; i < datas.length; ++i) {//funcion para graficar el range
         x = datas[i][0];
         y = datas[i][1];
         fill(57, 255, 20);
