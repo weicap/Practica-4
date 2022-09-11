@@ -96,7 +96,54 @@
           var offset = $(e.target).offset(),
             offsetX = (e.offsetX || e.clientX - offset.left),
             offsetY = (e.offsetY || e.clientY - offset.top);
+ ctx.beginPath();
+          if(node.dimension == 0) { // was split on x value
+            ctx.moveTo(node.obj.x, bounds[1][0]);
+            ctx.lineTo(node.obj.x, bounds[1][1]);
+            leftBounds[0][1] = node.obj.x;
+            rightBounds[0][0] = node.obj.x;
+          } else {
+            ctx.moveTo(bounds[0][0], node.obj.y);
+            ctx.lineTo(bounds[0][1], node.obj.y);
+            leftBounds[1][1] = node.obj.y;
+            rightBounds[1][0] = node.obj.y;
+          }
+          ctx.closePath();
+          ctx.stroke();
 
+          ctx.fillStyle = "rgba(255,0,0,0.2)";
+          ctx.fillRect(bounds[0][0], bounds[1][0], bounds[0][1]-bounds[0][0], bounds[1][1]-bounds[1][0]);
+
+          render(node.left, leftBounds);
+          render(node.right, rightBounds);
+        }
+      }
+
+      $(function(){
+        canvas = $("#canvas")[0];
+        ctx = canvas.getContext('2d');
+
+        tree = new build_kdtree([]);
+
+        $("#add").click(function(){
+          var point = {
+            x: Math.random()*canvas.width,
+            y: Math.random()*canvas.height
+          };
+          points.push(point);
+          tree.insert(point);
+          renderTree();
+        });
+
+        $("#rebuild").click(function(){
+          tree = new kdTree(points, distance, ["x", "y"]);
+          renderTree();
+        });
+
+        $("#canvas").click(function(e){
+          var offset = $(e.target).offset(),
+            offsetX = (e.offsetX || e.clientX - offset.left),
+            offsetY = (e.offsetY || e.clientY - offset.top);
           var point = tree.nearest({x: offsetX, y: offsetY}, 1)[0][0];
           points.splice(points.indexOf(point), 1);
           tree.remove(point);
