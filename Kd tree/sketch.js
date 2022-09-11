@@ -79,7 +79,7 @@ function setup () {
     
     datos_Prueba(data);
 
-    let root = build_kdtree (data) ;
+    root = build_kdtree (data) ;
     console.log (root);
 
     // var punto = [5, 5];
@@ -143,7 +143,7 @@ function drawGraph(dotString) {
             dotText.innerText = diagramText;
         })
         .catch(error => {
-            console.error(error);
+            //console.error(error);
         });
 }
 // function graficaNodo(roots){
@@ -158,6 +158,17 @@ function drawGraph(dotString) {
     
 //     graph_holder.innerHTML = image;		// SVG
 // }
+
+function graficarKNN(){
+    var cantidadK= document.getElementById("cantidadKnn").value;
+    var knn=findKNN(root,pointP,parseInt(cantidadK)).nearestNodes;
+    for(let i=0;i<knn.length;i++){
+        fill(222, 15, 15);
+        circle(knn[i].point[0],height-knn[i].point[1],6); //200-y para q se dibuje apropiadamente 
+        console.log(knn[i].point);
+    }
+}
+
 function limpiarCuadro(){
 
     var width = 900; var height = 600; 
@@ -175,6 +186,24 @@ function limpiarCuadro(){
     }
 
 }
+// function rangeRec(){
+//     //console.log('prueba1');
+//     var fe = [];
+//     var pon = [237, 218];
+//     var h = [50, 100];
+//     var radio = 75;
+
+//     range_query_rect(root,pon,radio,fe);
+//     fill(0,255,0,40);
+//     rect(pon[0]-h[0],height-pon[1]-h[1],h[0]*2,h[1]*2)
+
+//     for (let i = 0; i < fe.length; i++){
+//         fill(0, 255, 0);
+//         circle(fe[i][0], height - fe[i][1], 7); //200-y para q se dibuje apropiadamente
+//         textSize(8);
+//         text(fe[i][0] + ',' + fe[i][1], fe[i][0] + 5, height - fe[i][1]); //200-y para q se dibuje apropiadamente
+//     }
+// }
 
 function otro(){
     console.log('hola')

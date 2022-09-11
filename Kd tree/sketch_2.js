@@ -156,7 +156,7 @@ function drawGraph(dotString) {
             dotText.innerText = diagramText;
         })
         .catch(error => {
-            console.error(error);
+            //console.error(error);
         });
 }
 // function graficaNodo(roots){
