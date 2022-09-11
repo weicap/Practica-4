@@ -34,6 +34,7 @@ var data=[];
 //}
 
 function setup () {
+
     var width = 400;
     var height = 400;
     let kdTreeCanvas = createCanvas (width , height ) ;
@@ -50,7 +51,7 @@ function setup () {
 
     for (var x = 0; x < width; x += width / 10) {
         for (var y = 0; y < height; y += height / 5) {
-            //stroke (125 , 125 , 125) ;
+            stroke (125 , 125 , 125) ;
             strokeWeight (1) ;
             line (x, 0, x, height );
             line (0 , y, width , y);
@@ -58,42 +59,54 @@ function setup () {
     }
 
     var data = [
-        // [40 ,70] ,
-        // [70 ,130] ,
-        // [90 ,40] ,
-        // [100 , 100] ,
-        // [140 ,110] ,
-        // [175 , 100] ,
-        // [150 , 30]
+        [40 ,70] ,
+        [70 ,130] ,
+        [90 ,40] ,
+        [100 , 100] ,
+        [140 ,110] ,
+        [175 , 100] ,
+        [150 , 30]
     ];
-    var cantidadNodos= document.getElementById("cantidadNodos").value;
-    for ( let i = 0; i < cantidadNodos; i ++) {
-        var x = Math.floor ( Math.random () * height );
-        var y = Math.floor ( Math.random () * height );
-        data.push ([x, y]) ;
-        fill (255 , 255 , 255) ;
-        circle (x, height - y, 7) ; // 200 -y para q se dibuje apropiadamente
-        textSize (8) ;
-        text (x + ',' + y, x + 5, height - y);// 200 -y para q se dibuje
-    }
+    // var cantidadNodos= document.getElementById("cantidadNodos").value;
+    // for ( let i = 0; i < cantidadNodos; i ++) {
+    //     var x = Math.floor ( Math.random () * height );
+    //     var y = Math.floor ( Math.random () * height );
+    //     data.push ([x, y]) ;
+    //     fill (255 , 255 , 255) ;
+    //     circle (x, height - y, 7) ; // 200 -y para q se dibuje apropiadamente
+    //     textSize (8) ;
+    //     text (x + ',' + y, x + 5, height - y);// 200 -y para q se dibuje
+    // }
     
     datos_Prueba(data);
 
     let root = build_kdtree (data) ;
+    var root2 = root;
     console.log (root);
 
+    // switch(A) {
+    //     case 1:
+    //         //graficarclosetPoint(root);
+    //         otro();
+    //         break;
+    //     case y:
+    //         // code block
+    //         break;
+    //     default:
+    //       // code block
+    //   }
     // var punto = [5, 5];
     // var cercano = closest_point_brute_force (data, punto)
     // console.log (cercano);
     graficarclosetPoint(root);
     //graficarnaiveclosetPoint();
 
-    // // var closestPoint1 = closest_point_brute_force(data, pointP);
-    // // fill(222, 15, 15);
-    // // circle(closestPoint1[0],height-closestPoint1[1],10);
-    // // console.log("CLOSEST POINT BRUTE FORCE : "+ closestPoint1);
-    // var closestPoint2 = naive_closest_point(root, pointP);
-    // console.log("NAIVE CLOSEST POINT NAIVE : "+ closestPoint2);
+    var closestPoint1 = closest_point_brute_force(data, pointP);
+    //fill(222, 15, 15);
+    //circle(closestPoint1[0],height-closestPoint1[1],10);
+    console.log(" >> 2 CLOSEST POINT BRUTE FORCE es: "+ closestPoint1);
+    // var closestPoint2 = naive_closest_point(root2, pointP).node.point;
+    // console.log(" >> 3 NAIVE CLOSEST POINT NAIVE : "+ closestPoint2);
 
 
     
@@ -106,7 +119,7 @@ function graficarclosetPoint(root){
     var nearestPoint=closest_point(root,pointP).node.point;
     fill(222, 15, 15);
     circle(nearestPoint[0],height-nearestPoint[1],10);
-    console.log("El nodo mas cercano es: "+nearestPoint);
+    console.log(" >> 1 CLOSEST POINT es: "+nearestPoint);
 }
 
 function datos_Prueba(datas){
