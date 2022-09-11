@@ -133,32 +133,7 @@ function naive_closest_point(node , point , depth = 0, best = null ) {
 }
 
 /////////////////////////////////////////////mejorado
-scannedNodes = []; 
-bestDist = Infinity;
-function closest_point(node,point) {
 
-    if (node === null) return;
-    //console.log(node);
-    //console.log(point);
-    scannedNodes.push(node);
-    var nodeDist = distanceSquared(node.point, point);
-    //console.log(nodeDist);
-    //console.log("-------------------");
-    if (nodeDist < bestDist) {
-        bestDist = nodeDist;
-        guess = node;
-        
-    }
-    console.log(node.point+' = ' +nodeDist);
-    // Busca de forma recursiva la mitad del árbol que contiene el objetivo
-    var side = point[node.axis] < node.point[node.axis] ? "left" : "right";
-    if (side == "left") {
-        closest_point(node.left,point);
-        var otherNode = node.right
-    } else {
-        closest_point(node.right,point);
-        var otherNode = node.left;
-    }  
     //Si la hiperesfera candidata cruza este plano de división, mira el otro lado del plano examinando el otro subárbol
     if (otherNode !== null) {
         var i = node.axis;
