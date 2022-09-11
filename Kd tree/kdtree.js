@@ -27,7 +27,7 @@ function build_kdtree(points, depth = 0){
     // sort by the axis :: ordenamos por el eje axis
     points.sort(function(a, b)
     {
-    return a[axis] - b[axis];
+    return a[axis] - b[axis];//retorna el delta de puntos
     });
     //console.log(points);
     
