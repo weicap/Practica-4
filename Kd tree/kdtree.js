@@ -8,7 +8,7 @@ class Node{
         this.axis = axis; //eje x = 0, y=1
     }
 }
-
+// point
 
 function build_kdtree(points, depth = 0){
     var n = points.length;
