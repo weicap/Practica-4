@@ -285,10 +285,12 @@ http://www.zlib.net/zlib_license.html
       }, {
         key: 'renderSVGElement',
         value: function renderSVGElement(src) {
+         
           var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   
           return this.renderString(src, _extends({}, options, { format: 'svg' })).then(function (str) {
             var parser = new DOMParser();
+            //console.log('viz2')
             return parser.parseFromString(str, 'image/svg+xml').documentElement;
           });
         }
@@ -299,7 +301,8 @@ http://www.zlib.net/zlib_license.html
           var scale = options.scale,
               mimeType = options.mimeType,
               quality = options.quality;
-              
+  
+  
           return this.renderString(src, _extends({}, options, { format: 'svg' })).then(function (str) {
             if ((typeof fabric === 'undefined' ? 'undefined' : _typeof(fabric)) === "object" && fabric.loadSVGFromString) {
               return svgXmlToImageElementFabric(str, { scale: scale, mimeType: mimeType, quality: quality });

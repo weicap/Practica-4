@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> QT</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.3.0/viz.js'></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script> -->
+    <script src="p5.min.js"> </script>
+    <script src="kdtree.js"></script>
+    <script src="sketch_2.js"></script>
+    <script src="viz.js"></script>
+    <script src="full.render.js"></script>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 5px;
+      }
+  
+      .grid-container>div {
+        text-align: center;
+        padding: 5px 0;
+      }
+    </style>
+
+    <h1>Maestría en Ciencias de la Computación</h1>
+    <h3>Grupo 10 --> KD tree</h3>
+
+  </head>
+  <header>
+    <text>Altura Kd-tree</text>
+    <input type="text" id="AlturaKDtree" name="AlturaKDtree" value=""/><br>
+    <input type="button" value="Fuerza Bruta" onclick="graficarfuerzabruta();" />
+    <input type="button" value="Naive" onclick="graficarnaiveclosetPoint();" />
+    <input type="button" value="Optimo" onclick="graficarclosetPoint();" />
+
+  </header>
+  <body>
+
+    <div class="grid-container">
+      <div class="grid-item">
+        <div id="KdTreeCanvas"></div>
+      </div>
+      <div class="grid-item">
+        <div id="KdTreeSvg"></div>
+      </div>
+
+      <div class="grid-item">&nbsp;</div>
+      <div class="grid-item">&nbsp;</div>
+      </div>
+  </body>
+</html>

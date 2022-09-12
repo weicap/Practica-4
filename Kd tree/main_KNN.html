@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title> QT</title>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/viz.js/1.3.0/viz.js'></script>
+    <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.min.js"></script> -->
+    <script src="p5.min.js"> </script>
+    <script src="kdtree.js"></script>
+    <script src="sketch.js"></script>
+    <script src="viz.js"></script>
+    <script src="full.render.js"></script>
+    <style>
+      .grid-container {
+        display: grid;
+        grid-template-columns: auto auto auto;
+        padding: 5px;
+      }
+  
+      .grid-container>div {
+        text-align: center;
+        padding: 5px 0;
+      }
+    </style>
+
+    <h1>Maestría en Ciencias de la Computación</h1>
+    <h3>Grupo 10 --> Kd Tree / KNN</h3>
+
+  </head>
+  <header>
+    <input type="button" value="Punto cercano" onclick="graficarclosetPoint();" /><br>
+    <input type="text" id="cantidadNodos" name="cantidadNodos" value="24"/>
+    <input type="button" id="generarKdtree" name="generarKdtree" value="Puntos Aleatorio" onclick="setup();" /><br>
+    <input type="text" id="cantidadKnn" name="cantidadKnn" value="5"/>
+    <input type="button" value="KNN" onclick="graficarKNN();" /><br>
+    <input type="text" id="radio" name="radio" value="75"/>
+    <input type="button" value="KNN_Rang.Circular" onclick="rangeCir();" /><br>
+    <input type="text" id="lado2" name="lado2" value="50"/>
+    <input type="text" id="lado1" name="lado1" value="50"/>
+    <input type="button" value="KNN_Rang.Rectangular" onclick="rangeRec();" />
+
+  </header>
+  <body>
+    <!-- <h1>KD tree </h1> -->
+    <div class="grid-container">
+    <div class="grid-item">
+			<div id="KdTreeCanvas"></div>
+		</div>
+		<div class="grid-item">
+			<div id="KdTreeSvg"></div>
+		</div>
+
+    <div class="grid-item">&nbsp;</div>
+		<div class="grid-item">&nbsp;</div>
+    </div>
+  </body>
+</html>
