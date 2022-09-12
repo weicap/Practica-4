@@ -23,6 +23,7 @@ class Node{
 //     var rh = getHeight(node.right);
 //     return 1 + max(lh,rh);
 // }
+
 // function generate_dot(node){
 //     if (node === null){
 //         return "";
