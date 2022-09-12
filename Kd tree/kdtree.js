@@ -8,9 +8,6 @@ class Node{
         this.axis = axis; //eje x = 0, y=1
     }
 }
-
-
-
 // // class N_Point {
 // //     constructor(points) {
 // //         this.vectorialSpace = points;
@@ -141,7 +138,6 @@ function closest_point(node,point) {
     scannedNodes.push(node);
     var nodeDist = distanceSquared(node.point, point);
     //console.log(nodeDist);
-    //console.log("-------------------");
     if (nodeDist < bestDist) {
         bestDist = nodeDist;
         guess = node;
