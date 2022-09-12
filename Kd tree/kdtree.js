@@ -9,6 +9,7 @@ class Node{
     }
 }
 
+
 // // class N_Point {
 // //     constructor(points) {
 // //         this.vectorialSpace = points;
@@ -74,7 +75,6 @@ function build_kdtree(points, depth = 0){
     return node;
 }
 
-
 function distanceSquared ( point1 , point2 ){
 	var distance = 0;
 	for (var i = 0; i < k; i ++)
@@ -82,8 +82,6 @@ function distanceSquared ( point1 , point2 ){
 	return Math.sqrt ( distance );
 }
 //function generate_dot(node){}
-
-//function range_query_circle (node , center , radio , queue , depth = 0) {}
 
 
 function closest_point_brute_force(points, point){
