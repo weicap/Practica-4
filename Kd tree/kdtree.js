@@ -41,6 +41,7 @@ class Node{
 //     return tmp;
 // }
 
+
 function build_kdtree(points, depth = 0){
     var n = points.length;
     var axis = depth % k;//depth en que nivel estamos
