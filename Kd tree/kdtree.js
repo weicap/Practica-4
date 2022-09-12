@@ -59,7 +59,7 @@ function build_kdtree(points, depth = 0){
     {
     return a[axis] - b[axis];
     });
-    //console.log(points);
+    
     
     var left = points.slice(0, median);
     var right = points.slice(median + 1);
