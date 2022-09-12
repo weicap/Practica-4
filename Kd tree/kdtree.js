@@ -13,7 +13,6 @@ class Node{
 // //     }
 // // }
 
-
 // function getHeight(node) {
 //     if (node === null){
 //         return 0;
@@ -290,7 +289,6 @@ function range_query_rect(node, center, hug, queue, depth = 0) {
 //     return height;
 // }
 // function generate_dot(node){}
-
 
 // function in_circle(point, center, radio){
 //     var dis = distanceSquared(point,center);
