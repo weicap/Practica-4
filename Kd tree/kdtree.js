@@ -1,5 +1,4 @@
 k=2;
-
 class Node{
     constructor(point, axis){
         this.point = point;
