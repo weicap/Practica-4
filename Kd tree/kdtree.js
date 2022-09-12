@@ -13,6 +13,7 @@ class Node{
 // //     }
 // // }
 
+
 // function getHeight(node) {
 //     if (node === null){
 //         return 0;
@@ -40,12 +41,10 @@ class Node{
 //     return tmp;
 // }
 
-
 function build_kdtree(points, depth = 0){
     var n = points.length;
     var axis = depth % k;//depth en que nivel estamos
-    
-    
+   
     if (n <= 0){
     return null;
     }
