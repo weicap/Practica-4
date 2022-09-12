@@ -9,7 +9,6 @@ class Node{
     }
 }
 
-
 // // class N_Point {
 // //     constructor(points) {
 // //         this.vectorialSpace = points;
