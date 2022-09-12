@@ -132,8 +132,7 @@ bestDist = Infinity;
 function closest_point(node,point) {
 
     if (node === null) return;
-    //console.log(node);
-    //console.log(point);
+
     scannedNodes.push(node);
     var nodeDist = distanceSquared(node.point, point);
     //console.log(nodeDist);
