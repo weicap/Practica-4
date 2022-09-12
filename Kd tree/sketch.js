@@ -1,7 +1,6 @@
 var root;
 var pointP = [140 ,90];
 var data=[];
-//}
 
 function setup () {
     var width = 400;
